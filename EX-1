@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+bool isPalindrome(char *str) {
+    int left = 0;
+    int right = strlen(str) - 1;
+
+    while (left < right) {
+        if (str[left] != str[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+int main() {
+    char *words[] = {"abc", "car", "ada", "racecar", "cool"};
+    int n = sizeof(words) / sizeof(words[0]);
+
+    for (int i = 0; i < n; i++) {
+        if (isPalindrome(words[i])) {
+            printf("First Palindromic String: %s\n", words[i]);
+            return 0;
+        }
+    }
+    printf("First Palindromic String: \"\"\n");
+    return 0;
+}
+
+
+output: First Palindromic String: ada
