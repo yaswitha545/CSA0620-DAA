@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int cmp(const void *a,const void *b){
+return (*(int*)a-*(int*)b);
+}
+void process(int arr[],int n){
+if(n==0){
+printf("List is empty\n");
+return;
+}
+qsort(arr,n,sizeof(int),cmp);
+printf("%d\n",arr[n-1]);
+}
+int main(){
+int a1[]={};
+int a2[]={5};
+int a3[]={3,3,3,3,3};
+process(a1,0);
+process(a2,1);
+process(a3,5);
+return 0;
+}
+
+output: List is empty
+5
+3
