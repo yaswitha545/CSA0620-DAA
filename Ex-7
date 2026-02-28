@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int main(){
+int arr[]={3,7,3,5,2,5,9,2};
+int n=sizeof(arr)/sizeof(arr[0]);
+int unique[n];
+int k=0;
+for(int i=0;i<n;i++){
+int found=0;
+for(int j=0;j<k;j++){
+if(arr[i]==unique[j]){
+found=1;
+break;
+}
+}
+if(!found){
+unique[k]=arr[i];
+k++;
+}
+}
+for(int i=0;i<k;i++){
+printf("%d ",unique[i]);
+}
+return 0;
+}
+
+output:
+3 7 5 2 9 
